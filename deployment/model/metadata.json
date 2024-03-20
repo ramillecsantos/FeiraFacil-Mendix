@@ -1,0 +1,122 @@
+{
+  "RuntimeVersion": "10.7.0.26214",
+  "ProjectID": "80f5e8b7-f6d6-46eb-90de-a5f75616dd4d",
+  "ProjectName": "FeiraFacil",
+  "ModelVersion": "unversioned",
+  "Description": "",
+  "AdminUser": "MxAdmin",
+  "Roles": {
+    "8dd52bfa-6d7e-453b-b506-303c0a3d9567": {
+      "Name": "Administrator",
+      "ManageableRoles": [
+        "8dd52bfa-6d7e-453b-b506-303c0a3d9567",
+        "53f5d6fa-6da9-4a71-b011-454ec052cce8",
+        "5cfc7420-4bf0-4a9a-a993-33c87ca53521"
+      ]
+    },
+    "53f5d6fa-6da9-4a71-b011-454ec052cce8": {
+      "Name": "DonoDaCasa"
+    },
+    "5cfc7420-4bf0-4a9a-a993-33c87ca53521": {
+      "Name": "Auxiliar"
+    }
+  },
+  "AdminRole": "8dd52bfa-6d7e-453b-b506-303c0a3d9567",
+  "Constants": [
+    {
+      "Name": "DocumentGeneration.AsyncTimeoutInSeconds",
+      "Type": "Integer",
+      "Description": "Timeout in seconds for an asynchronous request; determines how long a document is allowed to be queued by the Cloud service",
+      "DefaultValue": "300"
+    },
+    {
+      "Name": "DocumentGeneration.CloudEndpoint",
+      "Type": "String",
+      "Description": "",
+      "DefaultValue": "https://docgen.home.mendix.com"
+    },
+    {
+      "Name": "DocumentGeneration.CustomChromePath",
+      "Type": "String",
+      "Description": "Path to Chrome or Chromium executable, for example: C:/Program Files/Google/Chrome/Application/Chrome.exe",
+      "DefaultValue": ""
+    },
+    {
+      "Name": "DocumentGeneration.CustomNodePath",
+      "Type": "String",
+      "Description": "Path to Node.js executable, for example: C:/Program Files/nodejs/node.exe",
+      "DefaultValue": ""
+    },
+    {
+      "Name": "DocumentGeneration.MaxHoursBeforeTokenRefresh",
+      "Type": "Integer",
+      "Description": "The number of hours to determine if the access token that is used to secure the Document Generation Cloud service should be refreshed.",
+      "DefaultValue": "24"
+    },
+    {
+      "Name": "DocumentGeneration.OverrideServiceType",
+      "Type": "String",
+      "Description": "Overrides the service type to use. The applicable values are: Local, Cloud or empty (default). When empty, the module will determine the service type based on the operating system.",
+      "DefaultValue": ""
+    },
+    {
+      "Name": "DocumentGeneration.RequestCleanupOffsetInDays",
+      "Type": "Integer",
+      "Description": "The offset in days after which expired DocumentRequest objects are deleted if the 'SE_DocumentRequest_Cleanup' scheduled event has been enabled.\r\n\r\nDefault: 7 days.",
+      "DefaultValue": "7"
+    },
+    {
+      "Name": "DocumentGeneration.SyncTimeoutInSeconds",
+      "Type": "Integer",
+      "Description": "Timeout in seconds for a synchronous request to wait for the result",
+      "DefaultValue": "30"
+    },
+    {
+      "Name": "DocumentGeneration.TokenLifetimeInSeconds",
+      "Type": "Integer",
+      "Description": "Security token lifetime in seconds. The security token is used to secure and validate document requests from the local and/or cloud service.\r\n\r\nDefault value: 1800 (30 minutes)",
+      "DefaultValue": "1800"
+    },
+    {
+      "Name": "DocumentGeneration.Version",
+      "Type": "String",
+      "Description": "This is the version of the Document Generation module.",
+      "DefaultValue": "1.6.0"
+    }
+  ],
+  "ScheduledEvents": [
+    {
+      "Name": "DocumentGeneration.SE_AccessToken_Refresh",
+      "Description": "This scheduled event refreshes the access token that is used to secure access to the Document Generation Cloud service. If your app is running in the Mendix cloud, this scheduled event needs to be enabled."
+    },
+    {
+      "Name": "DocumentGeneration.SE_DocumentRequest_Cleanup",
+      "Description": "This scheduled event removes expired DocumentRequest objects after a configured offset in days (using constant @DocumentGeneration.RequestCleanupOffsetInDays, the default value is 7 days)."
+    }
+  ],
+  "Languages": [
+    "en_US"
+  ],
+  "Configuration": {
+    "SourceDatabaseType": "HSQLDB",
+    "SourceDatabaseName": "default",
+    "SourceBuiltInDatabasePath": "model/sampledata/data/database"
+  },
+  "RequestHandlers": [
+    {
+      "Name": "/api/",
+      "DefaultEnabled": true,
+      "MatchExactly": false
+    },
+    {
+      "Name": "/link/",
+      "DefaultEnabled": true,
+      "MatchExactly": false
+    },
+    {
+      "Name": "/p/",
+      "DefaultEnabled": true,
+      "MatchExactly": false
+    }
+  ]
+}

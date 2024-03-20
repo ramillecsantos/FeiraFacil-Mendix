@@ -1,0 +1,25 @@
+{
+  "Configuration": {
+    "DatabaseName": "default",
+    "DatabasePassword": "",
+    "DatabaseType": "HSQLDB",
+    "DatabaseHost": "",
+    "DatabaseUserName": "",
+    "DatabaseUseIntegratedSecurity": "False",
+    "ApplicationRootUrl": "http://localhost:8080/",
+    "ScheduledEventExecution": "None"
+  },
+  "Constants": {
+    "DocumentGeneration.Version": "1.6.0",
+    "DocumentGeneration.CustomNodePath": "",
+    "DocumentGeneration.CustomChromePath": "",
+    "DocumentGeneration.OverrideServiceType": "",
+    "DocumentGeneration.MaxHoursBeforeTokenRefresh": "24",
+    "DocumentGeneration.SyncTimeoutInSeconds": "30",
+    "DocumentGeneration.AsyncTimeoutInSeconds": "300",
+    "DocumentGeneration.TokenLifetimeInSeconds": "1800",
+    "DocumentGeneration.CloudEndpoint": "https://docgen.home.mendix.com",
+    "DocumentGeneration.RequestCleanupOffsetInDays": "7"
+  },
+  "AdminPassword": "1"
+}
